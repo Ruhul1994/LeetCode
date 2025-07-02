@@ -33,3 +33,18 @@ function twoSum(nums, target) {
     }
 }
 console.log(twoSum([3, 2, 4], 6)); // [1, 2]
+
+//Given an Number x, return true if x is a palindrome , and false otherwise.
+
+function isPalindromeNumber(x){
+    if(x < 0 ||( x % 10 === 0 && x !== 0 )) return false;
+    let reverseHalf = 0;
+    while(x > reverseHalf){
+         reverseHalf  = reverseHalf * 10 + (x % 10);
+        x = Math.floor(x / 10);
+    }
+    return x === reverseHalf || x === Math.floor(reverseHalf / 10);
+}
+
+console.log(isPalindromeNumber(121)); // true
+console.log(isPalindromeNumber(-121)); // false
